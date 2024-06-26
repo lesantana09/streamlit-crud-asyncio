@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  db:
+    container_name: database-streamlit
+    image: postgres:16
+    environment:
+      - ADMIN_DATABASE_HOST=admin
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - "5432:5432"
+    networks:
+      - my_networks
+
+networks:
+  my_networks:
+    name: my_networks
+
